@@ -1,6 +1,11 @@
 class Category < ApplicationRecord
+    validates :name, presence: true, length: { maximum: 100 }
+    validates :icon, presence: true
+  
     belongs_to :user
-    has_many :deductibles
-    has_one_attached :icon
-    validates :name, presence: true
-end
+    has_and_belongs_to_many :deals
+  
+    def total
+      deals.sum('amount')
+    end
+  end

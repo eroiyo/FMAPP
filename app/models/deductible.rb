@@ -1,8 +1,9 @@
 class Deductible < ApplicationRecord
-    belongs_to :user
-    belongs_to :categories
-    has_one_attached :icon
     validates :icon, presence: true
-    validates :amount, numericality: { greater_than_or_equal_to: 0 }
-    validates :name, presence: true
+    validates :name, :amount, :categories, presence: true, length: { maximum: 100 }
+    validates :amount, numericality: { greater_than: 0 }
+  
+    has_one_attached :icon
+    belongs_to :author, class_name: 'User'
+    has_and_belongs_to_many :categories
 end

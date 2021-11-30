@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(version: 2021_11_29_212746) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
-    t.bigint "category_id", null: false
-    t.index ["category_id"], name: "index_deductibles_on_category_id"
+    t.bigint "categories_id", null: false
+    t.index ["categories_id"], name: "index_deductibles_on_categories_id"
     t.index ["user_id"], name: "index_deductibles_on_user_id"
   end
 
@@ -84,6 +84,6 @@ ActiveRecord::Schema.define(version: 2021_11_29_212746) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "categories", "users"
-  add_foreign_key "deductibles", "categories"
+  add_foreign_key "deductibles", "categories", column: "categories_id"
   add_foreign_key "deductibles", "users"
 end
