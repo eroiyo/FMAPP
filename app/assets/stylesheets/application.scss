@@ -29,8 +29,8 @@ body {
 }
 
 .grad {
-    background-image: linear-gradient(#3979c3
-    , #2960a7);
+    background-image: linear-gradient(#2d629e
+    , #3474c7);
 }
 
 .button {
@@ -51,4 +51,117 @@ body {
 .background {
     background-color: #f1f3f2;
     color: gray;
+}
+
+.field {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    align-items: center;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: gray;
+}
+
+.box {
+    margin-top: 15px;
+    border-color: grey;
+    border-width: 1px;
+    border-style: solid;
+    margin-bottom: 15px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input:focus {
+    outline: none;
+}
+
+input {
+    border: none;
+    background: transparent;
+    height: 100%;
+    font-size: 15px;
+}
+
+.last {
+    border-bottom-style: none;
+    border-width: 0;
+}
+
+header{
+    text-align: center;
+    height: 7.5vh;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
+.action{
+    width: 18vw;
+    height: 22px;
+    margin-top: 2.25vh;
+};
+
+.header-element{
+    width:22%;
+    height: 100%;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+.wl {
+    color:white
+}
+
+.arrow {
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5vh;
+    color: white;
+}
+
+a {
+    text-decoration: none;    
+}
+
+.alert,
+.notice
+{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content {
+    width: 100%;
+    height: 80vh;
+}
+
+.add{
+    width: 100%;
+    height: 12.5vh;
+    background-color: #5fb523;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create {
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+    background-color: #5fb523;
+}
+
+.total-box{
+    width: 100%;
+    height: 7.5vh;
 }

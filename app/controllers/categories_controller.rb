@@ -5,6 +5,10 @@ class CategoriesController < ApplicationController
   def show
   end
 
+  def creation
+    @category = Category.new
+  end
+
   def create
   end
 

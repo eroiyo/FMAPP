@@ -4,6 +4,9 @@ class DeductiblesController < ApplicationController
 
   def show
   end
+  
+  def creation
+  end
 
   def create
   end
