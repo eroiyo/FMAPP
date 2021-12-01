@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'categories#index'
+  root to: 'welcome#index'
   get 'deductibles', to: 'deductibles#index'
   get 'deductibles/:id', to: 'deductibles#show'
   post 'deductibles/:id/destroy', to: 'deductibles#destroy'
