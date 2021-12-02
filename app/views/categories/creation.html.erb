@@ -1,12 +1,24 @@
   <%= form_with model: @category, class: "category-form", url: '/categories/create' do |f| %>
+  <header class="grad">
+  <div class="header-element"><a href="/categories"><i class="fa fa-arrow-left arrow" aria-hidden="true"></i></a></div>
+  <div class="header-element"><h3 class="wl light">CREATE CATEGORY</h3></div>
+  <div class="header-element"> <%= f.submit "Save", class: "wl light action" %></div>
+  </header>
   <div class="white box">
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   </div>
-    <%= f.submit "Save", class: "button has-text-white" %>
+    <div class="last field exepction">
+    <%= f.label :icon, "Icon", id: "image-upload" %>
+    <%= f.file_field :icon, autofocus: true, id: "image-uploader" %>
+    <% if @category.icon.attached? %>
+    <%= image_tag @category.icon, style: "width: 200px; display: block"%>
+    <% end %>
+  </div>
     </div>
       </div>
     <%= render "devise/shared/error_messages", resource: @category %>
+    <%= render "devise/shared/error" %>
   <% end %>
 </div>

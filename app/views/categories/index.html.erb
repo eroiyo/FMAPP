@@ -7,6 +7,9 @@
   </div>
   </header>
   <div class=content>
+  <% current_user.categories.each do |category| %>
+  <%= render partial: "categories/category", object: category %>
+  <% end %>
   </div>
   <div class="add">
   <%= link_to 'ADD A NEW CATEGORY', categories_create_path, class: "giant button create" %>

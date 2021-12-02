@@ -1,0 +1,14 @@
+<div class="white box">
+<div class="category-box">
+<div class="category-portrait">
+<%= image_tag(category.icon, class: "category-image") %>
+</div>
+<div class="category-information">
+<a href=<%= "/categories/" + category.id.to_s %>><h3 class="category title"><%= category.name %></h3></a>
+<p class="date"><%= category.updated_at %></p>
+</div>
+<div class="category-information">
+<p class="total">$<%= category.total %></p>
+</div>
+</div>
+</div>

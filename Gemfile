@@ -46,6 +46,7 @@ gem 'devise'
 gem 'cancancan'
 gem 'dotenv-rails'
 gem 'font-awesome-sass'
+gem 'image_processing'
 
 group :test do
   # Adds support for Capybara system testing and selenium driver

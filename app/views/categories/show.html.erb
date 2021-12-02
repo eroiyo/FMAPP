@@ -1,2 +1,17 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+  <header class="grad">
+  <div class="header-element"><a href="/"><i class="fa fa-arrow-left arrow" aria-hidden="true"></i></a></div>
+  <div class="header-element"><h3 class="wl light"><%= @category.name %></h3></div>
+  <div class="header-element"><%= link_to(destroy_user_session_path, method: :delete) do %>
+  <h2 class= "wl light">Logout</h2>
+  <% end %>
+  </div>
+  </header>
+  <div class="white box complete">
+  <p class="total"><%= @category.name %> Total Amount:</p>
+  <p class="total">$<%= @category.total %></p>
+  </div>
+  <div class=content2>
+  </div>
+  <div class="add">
+  <%= link_to 'ADD A NEW DEDUCTIBLE', deductibles_create_path, class: "giant button create" %>
+  </div>
