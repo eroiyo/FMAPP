@@ -1,3 +1,9 @@
 // Place all the styles related to the Deductibles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.deductible-box {
+    display: grid;
+    height: 150px;
+    grid-template-columns: 70% 30%;
+}

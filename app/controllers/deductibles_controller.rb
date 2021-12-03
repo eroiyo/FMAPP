@@ -21,16 +21,21 @@ class DeductiblesController < ApplicationController
     @deductible.amount = amount
     
     picks = params[:picks]
-    picks.each do |category|
-      true_category = Category.find(category)
-      @deductible.categories << true_category
-    end
-
-    if @deductible.save
-      redirect_to("/categories/")
-    else
-      flash.alert = "one of the fields is invalid"
+    if picks.nil?
+      flash.alert = "you have to pick atleast one category"
       redirect_to("/deductibles/create")
+    else
+      picks.each do |category|
+        true_category = Category.find(category)
+        @deductible.categories << true_category
+      end
+  
+      if @deductible.save
+        redirect_to("/categories/")
+      else
+        flash.alert = "one of the fields is invalid"
+        redirect_to("/deductibles/create")
+      end
     end
   end
 

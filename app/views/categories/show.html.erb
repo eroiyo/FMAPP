@@ -11,6 +11,9 @@
   <p class="total">$<%= @category.total %></p>
   </div>
   <div class=content2>
+  <% @category.deductibles.each do |deductible| %>
+  <%= render partial: "deductibles/deductible", object: deductible %>
+  <% end %>
   </div>
   <div class="add">
   <%= link_to 'ADD A NEW DEDUCTIBLE', deductibles_create_path, class: "giant button create" %>
