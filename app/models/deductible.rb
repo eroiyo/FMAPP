@@ -1,6 +1,5 @@
 class Deductible < ApplicationRecord
-    validates :icon, presence: true
-    validates :name, :amount, :categories, presence: true, length: { maximum: 100 }
+    validates :name, :amount, :categories, presence: true
     validates :amount, numericality: { greater_than: 0 }
   
     belongs_to :user

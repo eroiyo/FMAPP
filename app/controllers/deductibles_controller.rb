@@ -14,15 +14,17 @@ class DeductiblesController < ApplicationController
     user = current_user
     @deductible.user_id = user.id
     temp = params[:deductible]
-    name = params[:name]
+    name = temp[:name]
     amount = params[:amount]
+
+    @deductible.name = name
+    @deductible.amount = amount
     
     picks = params[:picks]
     picks.each do |category|
-      @deductible.categories << category
+      true_category = Category.find(category)
+      @deductible.categories << true_category
     end
-    @deductible.name = name
-    @deductible.amount = amount
 
     if @deductible.save
       redirect_to("/categories/")

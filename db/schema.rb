@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_02_201159) do
+ActiveRecord::Schema.define(version: 2021_11_29_212746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,8 +52,10 @@ ActiveRecord::Schema.define(version: 2021_12_02_201159) do
   end
 
   create_table "categories_deductibles", id: false, force: :cascade do |t|
-    t.bigint "category_id", null: false
-    t.bigint "deductible_id", null: false
+    t.bigint "category_id"
+    t.bigint "deductible_id"
+    t.index ["category_id"], name: "index_categories_deductibles_on_category_id"
+    t.index ["deductible_id"], name: "index_categories_deductibles_on_deductible_id"
   end
 
   create_table "deductibles", force: :cascade do |t|
@@ -62,8 +64,6 @@ ActiveRecord::Schema.define(version: 2021_12_02_201159) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
-    t.bigint "categories_id", null: false
-    t.index ["categories_id"], name: "index_deductibles_on_categories_id"
     t.index ["user_id"], name: "index_deductibles_on_user_id"
   end
 
@@ -89,6 +89,5 @@ ActiveRecord::Schema.define(version: 2021_12_02_201159) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "categories", "users"
-  add_foreign_key "deductibles", "categories", column: "categories_id"
   add_foreign_key "deductibles", "users"
 end
