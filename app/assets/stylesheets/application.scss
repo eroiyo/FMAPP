@@ -31,6 +31,7 @@ body {
     background-color: #f1f3f2;
     margin: 0;
     position: relative;
+    overflow-x: hidden;
 }
 
 .grad {
@@ -70,6 +71,9 @@ body {
     border-width: 1px;
     border-color: gray;
 }
+.b {
+    grid-template-columns: 90% 10%;
+}
 
 .box {
     margin-top: 15px;
@@ -99,6 +103,7 @@ input {
 }
 
 header{
+    width: 100vw;
     text-align: center;
     height: 7.5vh;
     flex-direction: row;
@@ -152,7 +157,7 @@ a {
 
 .complete {
     display:grid;
-    width: 100%;
+    width: 99.5vw;
     height: 6.5vh;
     margin: 0;
     grid-template-columns: 50% 50%;
@@ -199,4 +204,9 @@ a {
     color: black;
     text-align: center;
     margin: 0;
+}
+
+.checkbox {
+    height: 15px;
+    font-size: 15px;
 }
