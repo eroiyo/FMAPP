@@ -7,6 +7,7 @@
   </div>
   </header>
   <div class=content>
+  <%= render "devise/shared/erased" %>
   <% current_user.categories.each do |category| %>
   <%= render partial: "categories/category", object: category %>
   <% end %>
