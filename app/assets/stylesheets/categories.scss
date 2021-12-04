@@ -3,27 +3,27 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .category-portrait {
-    height: 100px;
-    width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
+  height: 100px;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .category-box {
-    display: grid;
-    height: 150px;
-    grid-template-columns: 40% 30% 30%;
+  display: grid;
+  height: 150px;
+  grid-template-columns: 40% 30% 30%;
 }
 .category-image {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .category-information {
-    align-items: center;
-    justify-content: center;
-    display: grid; 
-    grid-template-rows: 50% 50%;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-template-rows: 50% 50%;
 }

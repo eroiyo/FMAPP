@@ -19,200 +19,198 @@
 @import "font-awesome";
 
 * {
-    font-family: "Proxima3", serif;
+  font-family: "Proxima3", serif;
 }
 
 a {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 body {
-    background-color: #f1f3f2;
-    margin: 0;
-    position: relative;
-    overflow-x: hidden;
+  background-color: #f1f3f2;
+  margin: 0;
+  position: relative;
+  overflow-x: hidden;
 }
 
 .grad {
-    background-image: linear-gradient(#2d629e
-    , #3474c7);
+  background-image: linear-gradient(#2d629e, #3474c7);
 }
 
 .button {
-    background-color: #377bc2;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-  }
+  background-color: #377bc2;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
 
 .white {
-    background-color: white;
-    color: gray;
+  background-color: white;
+  color: gray;
 }
 
 .background {
-    background-color: #f1f3f2;
-    color: gray;
+  background-color: #f1f3f2;
+  color: gray;
 }
 
 .field {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    min-height: 50px;
-    align-items: center;
-    border-bottom-style: solid;
-    border-width: 1px;
-    border-color: gray;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 50px;
+  align-items: center;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: gray;
 }
 .b {
-    grid-template-columns: 90% 10%;
+  grid-template-columns: 90% 10%;
 }
 
 .box {
-    margin-top: 15px;
-    border-color: grey;
-    border-width: 1px;
-    border-style: solid;
-    margin-bottom: 15px;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
+  margin-top: 15px;
+  border-color: grey;
+  border-width: 1px;
+  border-style: solid;
+  margin-bottom: 15px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 input:focus {
-    outline: none;
+  outline: none;
 }
 
 input {
-    border: none;
-    background: transparent;
-    height: 100%;
-    font-size: 15px;
+  border: none;
+  background: transparent;
+  height: 100%;
+  font-size: 15px;
 }
 
 .last {
-    border-bottom-style: none;
-    border-width: 0;
+  border-bottom-style: none;
+  border-width: 0;
 }
 
-header{
-    width: 100vw;
-    text-align: center;
-    height: 7.5vh;
-    flex-direction: row;
-    display: flex;
-    justify-content: space-between;
+header {
+  width: 100vw;
+  text-align: center;
+  height: 7.5vh;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
 }
 
-.action{
-    width: 18vw;
-    height: 22px;
-    margin-top: 2.25vh;
-};
+.action {
+  width: 18vw;
+  height: 22px;
+  margin-top: 2.25vh;
+}
 
-.header-element{
-    width:22%;
-    height: 100%;
-    font-size: 12px;
-    align-items: center;
-    justify-content: center;
+.header-element {
+  width: 22%;
+  height: 100%;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
 }
 
 .wl {
-    color:white
+  color: white;
 }
 
 .arrow {
-    display: flex;
-    font-size: 20px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2.5vh;
-    color: white;
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5vh;
+  color: white;
 }
 
 a {
-    text-decoration: none;    
+  text-decoration: none;
 }
 
 .alert,
-.notice
-{
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+.notice {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .content {
-    width: 100%;
-    height: 80vh;
-    overflow-y: scroll;
+  width: 100%;
+  height: 80vh;
+  overflow-y: scroll;
 }
 
 .complete {
-    display:grid;
-    width: 99.5vw;
-    height: 6.5vh;
-    margin: 0;
-    grid-template-columns: 50% 50%;
-    justify-content: center;
-    align-items: center;
+  display: grid;
+  width: 99.5vw;
+  height: 6.5vh;
+  margin: 0;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+  align-items: center;
 }
 
 .content2 {
-    width: 100%;
-    height: 73vh;
-    overflow-y: scroll;
+  width: 100%;
+  height: 73vh;
+  overflow-y: scroll;
 }
 
-.add{
-    width: 100%;
-    height: 12.5vh;
-    background-color: #5fb523;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.add {
+  width: 100%;
+  height: 12.5vh;
+  background-color: #5fb523;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .create {
-    border-color: white;
-    border-width: 2px;
-    border-style: solid;
-    background-color: #5fb523;
+  border-color: white;
+  border-width: 2px;
+  border-style: solid;
+  background-color: #5fb523;
 }
 
-.total-box{
-    width: 100%;
-    height: 7.5vh;
+.total-box {
+  width: 100%;
+  height: 7.5vh;
 }
 
 #image-uploader {
-    cursor: pointer;
-    margin-top: 10%;
+  cursor: pointer;
+  margin-top: 10%;
 }
 
-.exepction{
-    grid-template-columns: 20% 80%;
+.exepction {
+  grid-template-columns: 20% 80%;
 }
 
 .total {
-    color: black;
-    text-align: center;
-    margin: 0;
+  color: black;
+  text-align: center;
+  margin: 0;
 }
 
 .checkbox {
-    height: 15px;
-    font-size: 15px;
+  height: 15px;
+  font-size: 15px;
 }
 
 .invisible {
-    display: none;
+  display: none;
 }
