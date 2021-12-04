@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'validates' do
-    subject { User.new first_name: 'Jhon',  last_name: 'Doe', password: "123456789"}
+    subject { User.new first_name: 'Jhon', last_name: 'Doe', password: '123456789' }
 
     before { subject.save }
 

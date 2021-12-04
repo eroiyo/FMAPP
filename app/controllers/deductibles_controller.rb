@@ -1,10 +1,10 @@
-class DeductiblesController < ApplicationController
-  def index
-  end
+# frozen_string_literal: true
 
-  def show
-  end
-  
+class DeductiblesController < ApplicationController
+  def index; end
+
+  def show; end
+
   def creation
     @deductible = Deductible.new
   end
@@ -19,26 +19,25 @@ class DeductiblesController < ApplicationController
 
     @deductible.name = name
     @deductible.amount = amount
-    
+
     picks = params[:picks]
     if picks.nil?
-      flash.alert = "you have to pick atleast one category"
-      redirect_to("/deductibles/create")
+      flash.alert = 'you have to pick atleast one category'
+      redirect_to('/deductibles/create')
     else
       picks.each do |category|
         true_category = Category.find(category)
         @deductible.categories << true_category
       end
-  
+
       if @deductible.save
-        redirect_to("/categories/")
+        redirect_to('/categories/')
       else
-        flash.alert = "one of the fields is invalid"
-        redirect_to("/deductibles/create")
+        flash.alert = 'one of the fields is invalid'
+        redirect_to('/deductibles/create')
       end
     end
   end
 
-  def destroy
-  end
+  def destroy; end
 end

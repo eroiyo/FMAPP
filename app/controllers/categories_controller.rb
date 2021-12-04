@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 class CategoriesController < ApplicationController
-  def index
-  end
+  def index; end
 
   def show
     user = current_user
-    @category =user.categories.find(params[:id])
+    @category = user.categories.find(params[:id])
   end
 
   def creation
@@ -22,14 +23,12 @@ class CategoriesController < ApplicationController
     @category.icon = icon
 
     if @category.save
-      redirect_to("/categories/")
+      redirect_to('/categories/')
     else
-      flash.alert = "Image or name are invalid"
-      redirect_to("/categories/create")
+      flash.alert = 'Image or name are invalid'
+      redirect_to('/categories/create')
     end
-
   end
 
-  def destroy
-  end
+  def destroy; end
 end

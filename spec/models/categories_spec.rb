@@ -17,7 +17,5 @@ RSpec.describe Category, type: :model do
       subject.name = ' '
       expect(subject).to_not be_valid
     end
-
   end
-
 end
