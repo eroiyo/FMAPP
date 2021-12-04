@@ -4,6 +4,9 @@
 
 > A mobile web application where you can manage your finances
 
+![image](https://user-images.githubusercontent.com/59938389/144702089-4475b885-6468-4149-ac13-b5d1f083a172.png)
+
+
 A mobile web application where you can manage your finances: you have a list of deductibles associated with differents categories associated so that you can see how much money you spent and on every category
 
 ## Built With
