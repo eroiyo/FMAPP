@@ -7,7 +7,6 @@ describe 'Deductibles', type: :feature do
     @user.first_name = 'User_'
     @user.email = 'test130@example.com'
     @user.password = 'taawktljasktlw4aaglj'
-    @user.skip_confirmation!
     @user.save!
 
     3.times do |y|
@@ -57,5 +56,34 @@ describe 'Deductibles', type: :feature do
     User.destroy(@user.id)
 
     expect(page).to have_content @user.categories[0].deductibles[0].name
+  end
+
+  it 'I can see The date of a deductible.' do
+    visit "/categories/#{@user.categories[0].id}"
+    expect(page).to have_content @user.categories[0].deductibles[0].updated_at
+
+    Deductible.destroy_by(user_id: @user.id)
+    Category.destroy_by(user_id: @user.id)
+    User.destroy(@user.id)
+  end
+
+  it 'If i click on CREATE A NEW DEDUCTIBLE, it redirect me to the deductible creation page.' do
+    visit "/categories/#{@user.categories[0].id}"
+    click_on 'ADD A NEW DEDUCTIBLE'
+
+    expect(current_path).to eq('/deductibles/create')
+    Deductible.destroy_by(user_id: @user.id)
+    Category.destroy_by(user_id: @user.id)
+    User.destroy(@user.id)
+  end
+
+  it 'If i click on the arrow, it redirect me to a page before.' do
+    visit "/categories/#{@user.categories[0].id}"
+    find(class: 'fa fa-arrow-left arrow').click
+
+    expect(current_path).should_not eq("/categories/#{@user.categories[0].id}")
+    Deductible.destroy_by(user_id: @user.id)
+    Category.destroy_by(user_id: @user.id)
+    User.destroy(@user.id)
   end
 end

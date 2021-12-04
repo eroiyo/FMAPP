@@ -7,7 +7,6 @@ describe 'The User Show Process', type: :feature do
     @user.first_name = 'User_'
     @user.email = 'test130@example.com'
     @user.password = 'taawktljasktlw4aaglj'
-    @user.skip_confirmation!
     @user.save!
 
     3.times do |y|
@@ -52,6 +51,36 @@ describe 'The User Show Process', type: :feature do
     visit '/categories'
     expect(page).to have_content @user.categories[0].total
 
+    Deductible.destroy_by(user_id: @user.id)
+    Category.destroy_by(user_id: @user.id)
+    User.destroy(@user.id)
+  end
+
+  it 'I can see The date of a category.' do
+    visit '/categories'
+    expect(page).to have_content @user.categories[0].updated_at
+
+    Deductible.destroy_by(user_id: @user.id)
+    Category.destroy_by(user_id: @user.id)
+    User.destroy(@user.id)
+  end
+
+  it 'If i click on a category, it redirect me to the category page.' do
+    visit '/categories'
+    click_on @user.categories[0].name
+    id = @user.categories[0].id
+
+    expect(current_path).to eq("/categories/#{id}")
+    Deductible.destroy_by(user_id: @user.id)
+    Category.destroy_by(user_id: @user.id)
+    User.destroy(@user.id)
+  end
+
+  it 'If i click on CREATE A NEW CATEGORY, it redirect me to the category creation page.' do
+    visit '/categories'
+    click_on 'ADD A NEW CATEGORY'
+
+    expect(current_path).to eq('/categories/create')
     Deductible.destroy_by(user_id: @user.id)
     Category.destroy_by(user_id: @user.id)
     User.destroy(@user.id)

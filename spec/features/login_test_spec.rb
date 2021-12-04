@@ -7,7 +7,6 @@ describe 'the signin process', type: :feature do
     @user.first_name = 'User_'
     @user.email = 'test11@example.com'
     @user.password = 'taawktljasktlw4aaglj'
-    @user.skip_confirmation!
     @user.save!
   end
 
