@@ -3,9 +3,9 @@
 describe 'The User Show Process', type: :feature do
   before :each do
     @user = User.new
-    @user.last_name = '#130'
+    @user.last_name = '#1337'
     @user.first_name = 'User_'
-    @user.email = 'test130@example.com'
+    @user.email = 'test1337@example.com'
     @user.password = 'taawktljasktlw4aaglj'
     @user.save!
 
@@ -22,7 +22,7 @@ describe 'The User Show Process', type: :feature do
 
     visit '/users/sign_in'
     within('#new_user') do
-      fill_in 'user_email', with: 'test130@example.com'
+      fill_in 'user_email', with: 'test1337@example.com'
       fill_in 'user_password', with: 'taawktljasktlw4aaglj'
     end
     click_button 'Log in'
