@@ -51,14 +51,19 @@ ActiveRecord::Schema.define(version: 2021_11_29_212746) do
     t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
+  create_table "categories_deductibles", id: false, force: :cascade do |t|
+    t.bigint "category_id"
+    t.bigint "deductible_id"
+    t.index ["category_id"], name: "index_categories_deductibles_on_category_id"
+    t.index ["deductible_id"], name: "index_categories_deductibles_on_deductible_id"
+  end
+
   create_table "deductibles", force: :cascade do |t|
     t.string "name"
     t.decimal "amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
-    t.bigint "categories_id", null: false
-    t.index ["categories_id"], name: "index_deductibles_on_categories_id"
     t.index ["user_id"], name: "index_deductibles_on_user_id"
   end
 
@@ -72,10 +77,6 @@ ActiveRecord::Schema.define(version: 2021_11_29_212746) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
     t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -84,6 +85,5 @@ ActiveRecord::Schema.define(version: 2021_11_29_212746) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "categories", "users"
-  add_foreign_key "deductibles", "categories", column: "categories_id"
   add_foreign_key "deductibles", "users"
 end
